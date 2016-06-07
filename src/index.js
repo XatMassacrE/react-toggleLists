@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = require('./components/App');
+var App = require('./components/App');
+
+require('./index.scss');
 
 ReactDOM.render(
   <App />, document.getElementById('app')

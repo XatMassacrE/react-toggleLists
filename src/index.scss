@@ -1,0 +1,23 @@
+$main-background-color: #677C8C;
+$base-main-color: #FFFFFF;
+$light-gray-color: #CED8DB;
+$dark-gray-color: #576977;
+
+body {
+  height: 100%;
+  width: 100%;
+}
+.xat-badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  color: $base-main-color;
+  background-color: $dark-gray-color;
+  border-radius: .8rem;
+}

@@ -25,7 +25,7 @@ class App extends Component {
       // <section className = "vertical-nav">
       //   //<DeptNav />
       // </section>
-      <section className = "content-page">
+      <section className = "content-page xat-badge">
         hello 你好我也好
       </section>
     );
