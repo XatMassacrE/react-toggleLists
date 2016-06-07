@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 // import DataContent from './DataContent.jsx';
 
 var listData = require('../listData.json');
-
+//console.log(listData);
 class App extends Component {
 	// renderLists() {
 	// 	return this.props.tasks.map((list) => (
@@ -26,12 +26,10 @@ class App extends Component {
       //   //<DeptNav />
       // </section>
       <section className = "content-page">
-        hello
+        hello 你好我也好
       </section>
     );
   }
 }
 
-ReactDOM.render(
-  <App />, document.getElementById('app')
-);
+module.exports = App;

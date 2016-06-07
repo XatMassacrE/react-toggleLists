@@ -11,13 +11,11 @@ module.exports = {
     publicPath: "/assets/",
     filename: "bundle.js"
   },
+  port: 8080,
   module: {
     loaders: [
       {test: /\.js|jsx$/,
-        loader: 'babel',
-        query: {
-            presets: ['es2015','react']
-        },
+        loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],
         exclude: /node_modules/,
         include: /src/
       },
