@@ -2,6 +2,8 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
+import ShowList from './ShowList.jsx';
+// import MainContent from './MainContent.jsx';
 // import Title from './Title.jsx';
 // import RD_Dept from './RD_Dept.jsx';
 // import Design_Dept from './Design_Dept.jsx';
