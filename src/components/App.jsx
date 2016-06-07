@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 // import DeptNav from './DeptNav.jsx';
 // import DataContent from './DataContent.jsx';
 
-// var listData = require('../listData.json');
+var listData = require('../listData.json');
 
 class App extends Component {
 	// renderLists() {
