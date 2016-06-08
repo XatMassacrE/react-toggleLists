@@ -6,6 +6,7 @@ $list-background-color: #5F7E8C;
 body {
   height: 100%;
   width: 100%;
+  font-family: sans-serif;
 }
 .post-list {
   height: 100%;
@@ -26,7 +27,7 @@ body {
 }
 .title-list {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1;
   vertical-align: baseline;
   white-space: nowrap;
@@ -34,19 +35,19 @@ body {
   color: $light-gray-color;
 }
 .clear-all {
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1rem;
   color: $base-main-color;
   float: right;
 }
 .dept-row {
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1.2rem;
   color: $base-main-color;
   margin-left: 1.4rem;
 }
 .dept-row-number {
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1.2rem;
   color: $base-main-color;
   float: right;
@@ -56,7 +57,7 @@ body {
   min-width: 10px;
   padding: 3px 7px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1;
   vertical-align: baseline;
   white-space: nowrap;
@@ -82,7 +83,7 @@ body {
 .post-row {
   margin-left: 1rem;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1;
   vertical-align: baseline;
   white-space: nowrap;
@@ -93,7 +94,7 @@ body {
 .post-row-number {
   margin-right: 1rem;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1;
   vertical-align: baseline;
   white-space: nowrap;
@@ -104,4 +105,10 @@ body {
 }
 li {
   list-style: none;
+}
+button {
+  background-color: $list-background-color;
+}
+a {
+  text-decoration: none;
 }

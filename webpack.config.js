@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const jquery = require("jquery");
+
 module.exports = {
 	entry: [
     'webpack-dev-server/client?http://127.0.0.1:8080',
@@ -29,6 +31,11 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    })
   ],
 }

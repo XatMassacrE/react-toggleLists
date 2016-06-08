@@ -5,7 +5,7 @@ class PostRow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: this.props.initialState
+      checked: this.props.postCheck
     }
   }
   onCheckChange() {
@@ -22,7 +22,7 @@ class PostRow extends Component {
     var checked = this.state.checked;
     return (
       <li>
-        <input type='checkbox' id={id} check={checked} onChange={this.onCheckChange.bind(this)} className='xat-checkbox' />
+        <input ref='checkbox' type='checkbox' id={id} check={checked} onChange={this.onCheckChange.bind(this)} className={'xat-checkbox ' + this.props.categoryClass} />
         <label htmlFor={id}></label>
         <span className='post-row'>
           {name}
