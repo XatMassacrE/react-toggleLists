@@ -1,11 +1,29 @@
-$main-background-color: #677C8C;
+$badge-background-color: #677C8C;
 $base-main-color: #FFFFFF;
 $light-gray-color: #CED8DB;
 $dark-gray-color: #576977;
-
+$list-background-color: #5F7E8C;
 body {
   height: 100%;
   width: 100%;
+}
+.list-table {
+  background-color: $list-background-color;
+}
+.title-table {
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: left;
+  color: $light-gray-color;
+}
+.dept-row {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: $base-main-color;
 }
 .xat-badge {
   display: inline-block;
@@ -20,4 +38,29 @@ body {
   color: $base-main-color;
   background-color: $dark-gray-color;
   border-radius: .8rem;
+}
+.xat-checkbox {
+  display: none;
+}
+.xat-checkbox + label {
+  margin-bottom: -2px;
+  display: inline-block;
+  padding: 6px;
+  border: 2px solid $light-gray-color;
+  border-radius: 4px;
+  background-color: $list-background-color;;
+}
+.xat-checkbox:checked + label {
+  background-color: $light-gray-color;
+}
+.post-row {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  color: $light-gray-color;
+  padding-bottom: 2px;
 }

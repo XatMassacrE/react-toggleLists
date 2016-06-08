@@ -38,13 +38,16 @@ class App extends Component {
 }
 class DepTRow extends Component {
   render() {
+    var category = this.props.category;
+    var id = this.props.id;
     return (
       <tr>
         <th>
-          <input type='checkbox' />
+          <input type='checkbox' id={id} className='xat-checkbox' />
+          <label htmlFor={id}></label>
         </th>
-        <th style={{border: '1px solid'}}>
-          {this.props.category}
+        <th className='dept-row'>
+          {category}
         </th>
         <th className='xat-badge'>
           120
@@ -56,13 +59,20 @@ class DepTRow extends Component {
 class PostRow extends Component {
   render() {
     var name = this.props.postData.name;
+    var id = this.props.id;
+    console.log(id);
     return (
       <tr>
         <th>
-          <input type='checkbox' />
         </th>
-        <td>{name}</td>
-        <td>{this.props.postData.count}</td>
+        <td>
+          <input type='checkbox' id={id} className='xat-checkbox' />
+          <label htmlFor={id}></label>
+          <span className='post-row'>
+            {name}
+          </span>
+        </td>
+        <td className='post-row'>{this.props.postData.count}</td>
       </tr>
     );
   }
@@ -74,16 +84,17 @@ class PostTabel extends Component {
     this.props.postData.map((post) => {
       console.log(post.category !== lastCategory);
       if (post.category !== lastCategory) {
-        rows.push(<DepTRow category={post.category} key={post.category} />);
+        rows.push(<DepTRow category={post.category} key={post.category} id={'dept-' + post._id} />);
       }
-      rows.push(<PostRow postData={post} key={post.name} />);
+      rows.push(<PostRow postData={post} key={post.name} id={'post-' + post._id} />);
       lastCategory = post.category;
     });
     return (
-      <table>
+      <table className='list-table'>
         <thead>
           <tr>
-            <th>招聘职位</th>
+            <th className='title-table'>招聘职位</th>
+            <th></th>
             <th>清空</th>
           </tr>
         </thead>
