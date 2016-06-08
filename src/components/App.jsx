@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 // import DataContent from './DataContent.jsx';
 
 var listData = require('../listData.json');
-//console.log(listData);
+console.log(listData);
 class App extends Component {
 	// renderLists() {
 	// 	return this.props.tasks.map((list) => (
@@ -30,8 +30,9 @@ class App extends Component {
       // <section className = "content-page xat-badge">
       //   hello 你好我也好
       // </section>
-      <div>
-        <PostTabel postData={listData}/>
+      <div className='main'>
+        <PostList postData={listData}/>
+        <MainContent />
       </div>
     );
   }
@@ -40,19 +41,28 @@ class DepTRow extends Component {
   render() {
     var category = this.props.category;
     var id = this.props.id;
+    var posts = this.props.posts
+    var rows = [];
+    var count = 0;
+    posts.map((post) => {
+      rows.push(<PostRow postData={post} key={post.name} id={'post-' + post._id} />);
+      count += post.count;
+    })
     return (
-      <tr>
-        <th>
-          <input type='checkbox' id={id} className='xat-checkbox' />
-          <label htmlFor={id}></label>
-        </th>
-        <th className='dept-row'>
+      <div>
+        <input type='checkbox' id={id} className='xat-checkbox' />
+        <label htmlFor={id}></label>
+
+        <span className='dept-row'>
           {category}
-        </th>
-        <th className='xat-badge'>
-          120
-        </th>
-      </tr>
+        </span>
+        <span className='xat-badge dept-row-number'>
+          {count}
+        </span>
+        <ul>
+          {rows}
+        </ul>
+      </div>
     );
   }
 }
@@ -62,46 +72,43 @@ class PostRow extends Component {
     var id = this.props.id;
     console.log(id);
     return (
-      <tr>
-        <th>
-        </th>
-        <td>
-          <input type='checkbox' id={id} className='xat-checkbox' />
-          <label htmlFor={id}></label>
-          <span className='post-row'>
-            {name}
-          </span>
-        </td>
-        <td className='post-row'>{this.props.postData.count}</td>
-      </tr>
+      <li>
+        <input type='checkbox' id={id} className='xat-checkbox' />
+        <label htmlFor={id}></label>
+        <span className='post-row'>
+          {name}
+        </span>
+        <span className='post-row-number'>{this.props.postData.count}</span>
+      </li>
     );
   }
 }
-class PostTabel extends Component {
+class MainContent extends Component {
+  render() {
+    return (
+      <div className='main-content'>
+        this area will show your selections
+      </div>
+    );
+  }
+}
+class PostList extends Component {
   render() {
     var rows = [];
     var lastCategory = null;
-    this.props.postData.map((post) => {
-      console.log(post.category !== lastCategory);
-      if (post.category !== lastCategory) {
-        rows.push(<DepTRow category={post.category} key={post.category} id={'dept-' + post._id} />);
-      }
-      rows.push(<PostRow postData={post} key={post.name} id={'post-' + post._id} />);
-      lastCategory = post.category;
+    this.props.postData.map((category) => {
+      var current_category = Object.keys(category);
+      var cate = category[current_category][0].category;
+      rows.push(<DepTRow posts={category[current_category]} category={cate} key={current_category} id={current_category}/>);
     });
     return (
-      <table className='list-table'>
-        <thead>
-          <tr>
-            <th className='title-table'>招聘职位</th>
-            <th></th>
-            <th>清空</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className='post-list'>
+        <span className='title-list'>招聘职位</span>
+        <span className='clear-all'>清空</span>
+        <div className='list-area'>
           {rows}
-        </tbody>
-      </table>
+        </div>
+      </div>
     );
   }
 }
